@@ -20,7 +20,8 @@ This project provides business insights into customer retention, exit trends, cr
 
 ## 📷 Dashboard Preview
 
-*<img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/042a1808-aab9-452e-9015-02d4d48e1916" />
+*
+<img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/f28e6a8a-3a77-4ba7-92f5-6277791399bc" />
 *
 
 Example:
