@@ -8,7 +8,7 @@ This project provides business insights into customer retention, exit trends, cr
 ## 🚀 Live Project
 
 🔗 **View Live Dashboard:**  
-👉 https://your-live-project-link-here.com  
+👉 https://nirmeetchoudhary.github.io/Bank-churn-powerbi/ 
 
 *(Replace the above link with your actual hosted project URL)*
 
