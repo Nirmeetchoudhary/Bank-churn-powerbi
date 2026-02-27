@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bank Churn Analysis Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background-color: #f4f6f9;
+        }
+
+        header {
+            background-color: #1f2937;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            width: 95%;
+            margin: 20px auto;
+            position: relative;
+        }
+
+        .report-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            background: white;
+        }
+
+        .report-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Sign-in Message Overlay */
+        .signin-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.75);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            z-index: 10;
+        }
+
+        .signin-overlay button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            border: none;
+            background: #2563eb;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .signin-overlay button:hover {
+            background: #1d4ed8;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #1f2937;
+            color: white;
+            font-size: 13px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Bank Churn Analysis Dashboard</h1>
+    <p>Interactive Power BI Report</p>
+</header>
+
+<div class="container">
+    <div class="report-wrapper">
+
+        <!-- Sign In Message -->
+        <div class="signin-overlay" id="signinMessage">
+            <h2>Please sign in with Microsoft</h2>
+            <p>You must be signed in to Power BI to view this report.</p>
+            <button onclick="redirectToLogin()">Sign In</button>
+        </div>
+
+        <!-- Power BI Report -->
+        <iframe 
+            id="powerbiFrame"
+            title="Bank_Churn_Analysis"
+            src="https://app.fabric.microsoft.com/reportEmbed?reportId=7bbb65ae-46f7-4216-87e0-3237c387cc2a&autoAuth=true&ctid=2e3eae4e-0fa3-41d4-9243-d5727fa60e90"
+            allowFullScreen="true">
+        </iframe>
+
+    </div>
+</div>
+
+<footer>
+    © 2026 Bank Churn Analysis | Powered by Microsoft Power BI
+</footer>
+
+<script>
+    const iframe = document.getElementById("powerbiFrame");
+    const message = document.getElementById("signinMessage");
+
+    // Hide message when iframe loads
+    iframe.onload = function () {
+        // Wait 3 seconds to allow Power BI to redirect if needed
+        setTimeout(() => {
+            message.style.display = "none";
+        }, 3000);
+    };
+
+    function redirectToLogin() {
+        window.open("https://app.fabric.microsoft.com", "_blank");
+    }
+</script>
+
+</body>
+</html>
